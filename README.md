@@ -4,7 +4,7 @@ Emoji Slider is a simple sliding thing.
 
 ![Scr](https://i.ibb.co/PjfF7wk/image-2021-06-15-152129.png)
 
-### Live Demo - [Here](https://cacly-calculator.fiyer.repl.co)
+### Live Demo - [Here](firezoid.github.io/emoji-slider/)
 
 
 ## Languages
