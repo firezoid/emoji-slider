@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji Range Slider | CodingNepal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="section">
+      <ul class="emojis">
+        <li class="slide-emoji"><img src="https://i.pinimg.com/originals/46/93/64/469364fe949bc7f45c3b17ed89a83b03.png" alt=""></li>
+        <li><img src="https://cdn.shopify.com/s/files/1/1061/1924/products/Expressionless_Face_Emoji_large.png?v=1571606037" alt=""></li>
+        <li><img src="https://cdn.shopify.com/s/files/1/1061/1924/products/Slightly_Smiling_Face_Emoji_87fdae9b-b2af-4619-a37f-e484c5e2e7a4_large.png?v=1571606036" alt=""></li>
+        <li><img src="https://i.pinimg.com/originals/50/78/8c/50788c0f4db08ea306f4cf47129f5b91.png" alt=""></li>
+        <li><img src="http://cdn.shopify.com/s/files/1/1061/1924/products/Smiling_Face_Emoji_grande.png?v=1571606036" alt=""></li>
+      </ul>
+    </div>
+    <div class="slider">
+      <div class="thumb"><span></span></div>
+      <div class="progress-bar"></div>
+      <input type="range" min="0" value="0" max="100">
+    </div>
+  </div>
+
+  <script>
+    const body = document.querySelector("body");
+    const emoji = document.querySelector(".slide-emoji");
+    const input = document.querySelector("input");
+    const bar = document.querySelector(".progress-bar");
+    const thumb = document.querySelector(".thumb");
+    input.oninput = ()=>{
+      let sliderValue = input.value;
+      thumb.style.left = sliderValue + '%';
+      bar.style.width = sliderValue + '%';
+      if(sliderValue < 20){
+        emoji.style.marginTop = "0px";
+        body.classList.add("angry");
+        body.classList.remove("confuse");
+        body.classList.remove("like");
+      }
+      if(sliderValue >= 20){
+        emoji.style.marginTop = "-140px";
+        body.classList.add("confuse");
+        body.classList.remove("angry");
+        body.classList.remove("like");
+      }
+      if(sliderValue >= 40){
+        emoji.style.marginTop = "-280px";
+      }
+      if(sliderValue >= 60){
+        emoji.style.marginTop = "-420px";
+        body.classList.add("like");
+        body.classList.remove("confuse");
+        body.classList.remove("angry");
+      }
+      if(sliderValue >= 80){
+        emoji.style.marginTop = "-560px";
+      }
+    }
+  </script>
+
+</body>
+</html>
